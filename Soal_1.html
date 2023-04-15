@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<!-- <p>Enter names in the fields, then click "Submit" to submit the form:</p> -->
+
+<form id="frm1" action="/action_page.php">
+  Number of Disk: <input value ="1" type="number" name="fname"><br>
+
+  Size per Disk :
+  <select id="mySelect">
+  <option></option>
+  <option>300GB</option>
+  <option>500GB</option>
+  <option>1TB</option>
+  <option>2TB</option>
+</select>
+<br>
+  RAID Type :
+<select id="mySelect">
+  <option></option>
+  <option>RAID-0</option>
+  <option>RAID-1</option>
+  <option>RAID-5</option>
+  <option>RAID-10</option>
+</select>
+
+<br>
+<br>
+  <input type="button" onclick="myFunction()" value="Submit">
+</form>
+
+<script>
+function myFunction() {
+  var x = document.getElementsByName("fname").values;
+  if(x > 8){alert('Max value 8');}
+  document.getElementById("frm1").submit();
+  console.log("input 1");
+}
+</script>
+
+</body>
+</html>
