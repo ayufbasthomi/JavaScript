@@ -4,10 +4,10 @@
     margin-left: 150px;
 }
 
-.f-group
+/* .f-group
 {
     float: left;
-}
+} */
 
 .f-group label
 {
@@ -21,9 +21,9 @@ input
 {
     border: 1px solid #555;
     height: 40px;
-    width: 200px;
+    width: 170px;
     padding: 0 15px;
-    margin-right: 20px;
+    margin-bottom: 20px;
 }
 
 select
@@ -32,14 +32,23 @@ select
     height: 40px;
     width: 200px;
     padding: 0 15px;
-    margin-right: 20px;
+    margin-bottom: 20px;
 }
 
 output
 {
     border: 1px solid #555;
     height: 40px;
-    width: 200px;
+    width: 20px;
+    padding: 0 15px;
+    margin-right: 20px;
+}
+
+button
+{
+    border: 1px solid #555;
+    height: 30px;
+    width: 80px;
     padding: 0 15px;
     margin-right: 20px;
 }

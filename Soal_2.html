@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Soal 2</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="f-group">
+            <label for="">Input Dimensi</label>
+            <input value="3" type="number" id="dimensi">
+        </div>
+        <div class="f-group">
+          <label for="">Input Direction</label>
+            <select name="in_direction" id="in_direction">
+            <option>-- choose --</option>
+            <option>Up-Down</option>
+            <option>Down-Up</option>
+            <option>Left-Right</option>
+            <option>Right-Left</option>
+            </select>          
+        </div>
+        <div class="f-group">
+          <label for="">Input Value</label>
+            <select name="in_value" id="in_value">
+            <option>-- choose --</option>
+            <option>Alphabet</option>
+            <option>Angka Ganjil</option>
+            <option>Angka Genap</option>
+            </select>          
+        </div>
+        <button onclick="Dimensi()">Process</button>
+    </div>
+    
+    <script>
+        function Dimensi(){
+            var input_dim = document.getElementById("dimensi").value;
+            var input_direction = document.getElementById("in_direction").value;
+            var input_value = document.getElementById("in_value").value;
+            var i = 0, j = 0, k = 0;
+
+            if(parseInt(input_dim) > 9){
+                console.log("input 2");
+                alert("Max value 9");
+            }
+            else if(parseInt(input_dim) < 3){
+                alert("Min value 3");
+            }
+
+            if(parseInt(input_dim) >= 3 && parseInt(input_dim) <= 9){
+                if(input_direction == 'Up-Down'){
+                    for( i = 1; i <= parseInt(input_dim); i++){
+                        for( k = parseInt(input_dim); k >= 2; k--){
+                            if(i == k){
+                                if(input_value == 'Angka Genap'){
+                                    var a = i*2;
+                                    document.write("|");
+                                    document.write("_"+ a +"_");
+                                }
+                                else if(input_value == 'Angka Ganjil'){
+                                    var b = i+(i-1);
+                                    document.write("|");
+                                    document.write("_"+ b +"_");
+                                }
+                                else if(input_value == 'Alphabet'){
+                                    var str = String.fromCharCode(i + 64);
+                                    document.write("|");
+                                    document.write("_"+ str +"_");
+                                }
+                            }
+                            else{
+                                document.write("|___");
+                            }
+                        }
+                        for( j = 1; j <= parseInt(input_dim); j++){
+                            if(j == i){
+                                if(input_value == 'Angka Genap'){
+                                    var a = i*2;
+                                    document.write("|");
+                                    document.write("_"+ a +"_");
+                                }
+                                else if(input_value == 'Angka Ganjil'){
+                                    var b = i+(i-1);
+                                    document.write("|");
+                                    document.write("_"+ b +"_");
+                                }
+                                else if(input_value == 'Alphabet'){
+                                    var str = String.fromCharCode(i + 64);
+                                    document.write("|");
+                                    document.write("_"+ str +"_");
+                                }
+                            }
+                            else{
+                                document.write("|___");
+                            }
+                        }
+                        document.write("|");
+                        document.write("<p>","</p>");
+                    }
+                    for( i = parseInt(input_dim)+1; i <= (parseInt(input_dim)*2-1); i++){
+                        for( j = 1; j <= parseInt(input_dim); j++){
+                            if(j+parseInt(input_dim)-1 == i){
+                                if(input_value == 'Angka Genap'){
+                                    var a = i*2;
+                                    document.write("|");
+                                    document.write("_"+ a +"_");
+                                }
+                                else if(input_value == 'Angka Ganjil'){
+                                    var b = i+(i-1);
+                                    document.write("|");
+                                    document.write("_"+ b +"_");
+                                }
+                                else if(input_value == 'Alphabet'){
+                                    var str = String.fromCharCode(i + 64);
+                                    document.write("|");
+                                    document.write("_"+ str +"_");
+                                }
+                            }
+                            else{
+                                document.write("|___");
+                            }
+                        }
+                        for( k = parseInt(input_dim); k >= 2; k--){
+                            if(k+parseInt(input_dim)-2 == i){
+                                if(input_value == 'Angka Genap'){
+                                    var a = i*2;
+                                    document.write("|");
+                                    document.write("_"+ a +"_");
+                                }
+                                else if(input_value == 'Angka Ganjil'){
+                                    var b = i+(i-1);
+                                    document.write("|");
+                                    document.write("_"+ b +"_");
+                                }
+                                else if(input_value == 'Alphabet'){
+                                    var str = String.fromCharCode(i + 64);
+                                    document.write("|");
+                                    document.write("_"+ str +"_");
+                                }
+                            }
+                            else{
+                                document.write("|___");
+                            }
+                        }
+                        document.write("|");
+                        document.write("<p>","</p>");
+                    }
+                }
+            
+                if(input_direction == 'Down-Up'){
+                    console.log("0");
+                    for( i = (parseInt(input_dim)*2)-1; i > parseInt(input_dim); i--){
+                        console.log("1");
+                        for( k = parseInt(input_dim); k < (parseInt(input_dim)*2); k++){
+                            if(k == i){
+                                if(input_value == 'Angka Genap'){
+                                    var a = i*2;
+                                    document.write("|");
+                                    document.write("_"+ a +"_");
+                                }
+                                else if(input_value == 'Angka Ganjil'){
+                                    var b = i+(i-1);
+                                    document.write("|");
+                                    document.write("_"+ b +"_");
+                                }
+                                else if(input_value == 'Alphabet'){
+                                    var str = String.fromCharCode(i + 64);
+                                    document.write("|");
+                                    document.write("_"+ str +"_");
+                                }
+                            }
+                            else{
+                                document.write("|___");
+                            }
+                        }
+                        for( j = (parseInt(input_dim)*2)-2; j >= parseInt(input_dim); j--){
+                            console.log("1");
+                            if(j == i){
+                                console.log("1");
+                                if(input_value == 'Angka Genap'){
+                                    var a = i*2;
+                                    document.write("|");
+                                    document.write("_"+ a +"_");
+                                }
+                                else if(input_value == 'Angka Ganjil'){
+                                    var b = i+(i-1);
+                                    document.write("|");
+                                    document.write("_"+ b +"_");
+                                }
+                                else if(input_value == 'Alphabet'){
+                                    var str = String.fromCharCode(i + 64);
+                                    document.write("|");
+                                    document.write("_"+ str +"_");
+                                }
+                            }
+                            else{
+                                console.log("1");
+                                document.write("|___");
+                            }
+                        }
+                        document.write("|");
+                        document.write("<p>","</p>");
+                    }
+                    for( i = parseInt(input_dim); i >= 1; i--){
+                        for( j = parseInt(input_dim); j > 1; j--){
+                            console.log("1");
+                            if(j == i){
+                                console.log("1");
+                                if(input_value == 'Angka Genap'){
+                                    var a = i*2;
+                                    document.write("|");
+                                    document.write("_"+ a +"_");
+                                }
+                                else if(input_value == 'Angka Ganjil'){
+                                    var b = i+(i-1);
+                                    document.write("|");
+                                    document.write("_"+ b +"_");
+                                }
+                                else if(input_value == 'Alphabet'){
+                                    var str = String.fromCharCode(i + 64);
+                                    document.write("|");
+                                    document.write("_"+ str +"_");
+                                }
+                            }
+                            else{
+                                console.log("1");
+                                document.write("|___");
+                            }
+                        }
+                        for( k = 1; k <= parseInt(input_dim); k++){
+                            if(i == k){
+                                if(input_value == 'Angka Genap'){
+                                    var a = i*2;
+                                    document.write("|");
+                                    document.write("_"+ a +"_");
+                                }
+                                else if(input_value == 'Angka Ganjil'){
+                                    var b = i+(i-1);
+                                    document.write("|");
+                                    document.write("_"+ b +"_");
+                                }
+                                else if(input_value == 'Alphabet'){
+                                    var str = String.fromCharCode(i + 64);
+                                    document.write("|");
+                                    document.write("_"+ str +"_");
+                                }
+                            }
+                            else{
+                                document.write("|___");
+                            }
+                        }
+                        document.write("|");
+                        document.write("<p>","</p>");
+                    }
+                }
+
+                if(input_direction == 'Left-Right'){
+                    for( i = 1; i <= parseInt(input_dim); i++){
+                        for( k = parseInt(input_dim); k >= 2; k--){
+                            if(i == k){
+                                if(input_value == 'Angka Genap'){
+                                    var a = i*2;
+                                    document.write("|");
+                                    document.write("_"+ a +"_");
+                                }
+                                else if(input_value == 'Angka Ganjil'){
+                                    var b = i+(i-1);
+                                    document.write("|");
+                                    document.write("_"+ b +"_");
+                                }
+                                else if(input_value == 'Alphabet'){
+                                    var str = String.fromCharCode(i + 64);
+                                    document.write("|");
+                                    document.write("_"+ str +"_");
+                                }
+                            }
+                            else{
+                                document.write("|___");
+                            }
+                        }
+                        for( j = 1; j <= parseInt(input_dim); j++){
+                            if(j == i){
+                                if(input_value == 'Angka Genap'){
+                                    var a = i*2;
+                                    document.write("|");
+                                    document.write("_"+ a +"_");
+                                }
+                                else if(input_value == 'Angka Ganjil'){
+                                    var b = i+(i-1);
+                                    document.write("|");
+                                    document.write("_"+ b +"_");
+                                }
+                                else if(input_value == 'Alphabet'){
+                                    var str = String.fromCharCode(i + 64);
+                                    document.write("|");
+                                    document.write("_"+ str +"_");
+                                }
+                            }
+                            else{
+                                document.write("|___");
+                            }
+                        }
+                        document.write("|");
+                        document.write("<p>","</p>");
+                    }
+                    for( i = parseInt(input_dim)+1; i <= (parseInt(input_dim)*2-1); i++){
+                        for( j = 1; j <= parseInt(input_dim); j++){
+                            if(j+parseInt(input_dim)-1 == i){
+                                if(input_value == 'Angka Genap'){
+                                    var a = i*2;
+                                    document.write("|");
+                                    document.write("_"+ a +"_");
+                                }
+                                else if(input_value == 'Angka Ganjil'){
+                                    var b = i+(i-1);
+                                    document.write("|");
+                                    document.write("_"+ b +"_");
+                                }
+                                else if(input_value == 'Alphabet'){
+                                    var str = String.fromCharCode(i + 64);
+                                    document.write("|");
+                                    document.write("_"+ str +"_");
+                                }
+                            }
+                            else{
+                                document.write("|___");
+                            }
+                        }
+                        for( k = parseInt(input_dim); k >= 2; k--){
+                            if(k+parseInt(input_dim)-2 == i){
+                                if(input_value == 'Angka Genap'){
+                                    var a = i*2;
+                                    document.write("|");
+                                    document.write("_"+ a +"_");
+                                }
+                                else if(input_value == 'Angka Ganjil'){
+                                    var b = i+(i-1);
+                                    document.write("|");
+                                    document.write("_"+ b +"_");
+                                }
+                                else if(input_value == 'Alphabet'){
+                                    var str = String.fromCharCode(i + 64);
+                                    document.write("|");
+                                    document.write("_"+ str +"_");
+                                }
+                            }
+                            else{
+                                document.write("|___");
+                            }
+                        }
+                        document.write("|");
+                        document.write("<p>","</p>");
+                    }
+                }
+
+                if(input_direction == 'Right-Left'){
+                    for( i = 1; i <= parseInt(input_dim); i++){
+                        for( k = parseInt(input_dim); k >= 2; k--){
+                            if(i == k){
+                                if(input_value == 'Angka Genap'){
+                                    var a = i*2;
+                                    document.write("|");
+                                    document.write("_"+ a +"_");
+                                }
+                                else if(input_value == 'Angka Ganjil'){
+                                    var b = i+(i-1);
+                                    document.write("|");
+                                    document.write("_"+ b +"_");
+                                }
+                                else if(input_value == 'Alphabet'){
+                                    var str = String.fromCharCode(i + 64);
+                                    document.write("|");
+                                    document.write("_"+ str +"_");
+                                }
+                            }
+                            else{
+                                document.write("|___");
+                            }
+                        }
+                        for( j = 1; j <= parseInt(input_dim); j++){
+                            if(j == i){
+                                if(input_value == 'Angka Genap'){
+                                    var a = i*2;
+                                    document.write("|");
+                                    document.write("_"+ a +"_");
+                                }
+                                else if(input_value == 'Angka Ganjil'){
+                                    var b = i+(i-1);
+                                    document.write("|");
+                                    document.write("_"+ b +"_");
+                                }
+                                else if(input_value == 'Alphabet'){
+                                    var str = String.fromCharCode(i + 64);
+                                    document.write("|");
+                                    document.write("_"+ str +"_");
+                                }
+                            }
+                            else{
+                                document.write("|___");
+                            }
+                        }
+                        document.write("|");
+                        document.write("<p>","</p>");
+                    }
+                    for( i = parseInt(input_dim)+1; i <= (parseInt(input_dim)*2-1); i++){
+                        for( j = 1; j <= parseInt(input_dim); j++){
+                            if(j+parseInt(input_dim)-1 == i){
+                                if(input_value == 'Angka Genap'){
+                                    var a = i*2;
+                                    document.write("|");
+                                    document.write("_"+ a +"_");
+                                }
+                                else if(input_value == 'Angka Ganjil'){
+                                    var b = i+(i-1);
+                                    document.write("|");
+                                    document.write("_"+ b +"_");
+                                }
+                                else if(input_value == 'Alphabet'){
+                                    var str = String.fromCharCode(i + 64);
+                                    document.write("|");
+                                    document.write("_"+ str +"_");
+                                }
+                            }
+                            else{
+                                document.write("|___");
+                            }
+                        }
+                        for( k = parseInt(input_dim); k >= 2; k--){
+                            if(k+parseInt(input_dim)-2 == i){
+                                if(input_value == 'Angka Genap'){
+                                    var a = i*2;
+                                    document.write("|");
+                                    document.write("_"+ a +"_");
+                                }
+                                else if(input_value == 'Angka Ganjil'){
+                                    var b = i+(i-1);
+                                    document.write("|");
+                                    document.write("_"+ b +"_");
+                                }
+                                else if(input_value == 'Alphabet'){
+                                    var str = String.fromCharCode(i + 64);
+                                    document.write("|");
+                                    document.write("_"+ str +"_");
+                                }
+                            }
+                            else{
+                                document.write("|___");
+                            }
+                        }
+                        document.write("|");
+                        document.write("<p>","</p>");
+                    }
+                }
+            }
+
+        }
+    </script>
+</body>
