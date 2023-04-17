@@ -22,7 +22,7 @@ db.connect((err) => {
         const users = JSON.parse(JSON.stringify(result))
         console.log("hasil database -> ", users)
         app.get("/", (req, res) => {
-            res.render("index", { users: users, title: "testing" })
+            res.render("index", { users: users, title: "LAWANCOVID" })
         })
     })
 })
